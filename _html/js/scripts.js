@@ -1,8 +1,30 @@
-// Globally scoped object
-var MyApp = {};
+// this is not working because you cannot pass var to other function just by calling it
+//
+//
+// function testone() {
+//     var windowWidth = $(window).width();
+//     console.log(windowWidth);
+// }
+
+// function testtwo() {
+//     var element = 'windowWidth: ' + windowWidth ;
+//     console.log(element)
+// }
+
+// $(document).ready(function(){
+//     testone();
+//     testtwo();
+// }); // end of ready
+
+
+
+
+/* ------------------------------------------- */
+
+var MyApp = {}; // Globally scoped object
 
 function testone() {
-    // registering windowWidth as property of MyApp this way it's accesible outside this function
+    // registering windowWidth as property of MyApp object this way it's accesible outside this function
     MyApp.windowWidth = $(window).width();
     console.log(MyApp.windowWidth);
 }
@@ -16,5 +38,3 @@ $(document).ready(function(){
     testone();
     testtwo();
 }); // end of ready
-
-/* ------------------------------------------- */
